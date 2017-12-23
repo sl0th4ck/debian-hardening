@@ -1,0 +1,14 @@
+---
+
+  - name: 4.3 Ensure logrotate is configured (Not Scored)
+    file:
+      name: "{{ item }}"
+    with_items:
+      - '/etc/logrotate.conf'
+    tags:
+      - section4
+      - section4.3
+      - lvl.1.server
+      - lvl.1.workstation
+      - not.scored
+      
