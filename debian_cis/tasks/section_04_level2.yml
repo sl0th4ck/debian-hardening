@@ -54,6 +54,32 @@
       - lvl.1.server
       - lvl.1.workstation
       - not.scored
+
+  - name: 4.2.1.2 Ensure logging is configured (Not Scored)
+    file:
+        path: 'var/log/{{ item }}'
+        owner: root
+        group: root
+        mode: 0600
+    with_items:
+      - 'mail'
+      - 'mail.info'
+      - 'mail.warn'
+      - 'mail.err'
+      - 'news/news.crit'
+      - 'news/news.err'
+      - 'news/news.notice'
+      - 'warn'
+      - 'messages'
+      - 'localmessages'
+    when: syslog_package == "rsyslog"
+    tags:
+      - section4
+      - section4.2
+      - section4.2.1.2
+      - lvl.1.server
+      - lvl.1.workstation
+      - not.scored
       
   - command: find /etc/rsyslog.d -type f
     register: rsyslog_files
