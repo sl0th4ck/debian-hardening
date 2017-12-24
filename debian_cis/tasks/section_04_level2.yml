@@ -55,6 +55,19 @@
       - lvl.1.workstation
       - not.scored
 
+  - name: 4.2.1.2 Ensure logging directory is configured (Not Scored)
+    file:
+        path: '/var/log/news'
+        state: directory
+        owner: root
+        group: root
+      - section4
+      - section4.2
+      - section4.2.1.2a
+      - lvl.1.server
+      - lvl.1.workstation
+      - not.scored
+
   - name: 4.2.1.2 Ensure logging files are configured (Not Scored)
     file:
         path: '/var/log/{{ item }}'
@@ -62,6 +75,7 @@
         owner: root
         group: root
         mode: 0600
+
     with_items:
       - 'mail'
       - 'mail.info'
@@ -82,7 +96,12 @@
       - lvl.1.server
       - lvl.1.workstation
       - not.scored
-      
+  - name: 4.2.1.2 Ensure logging directory is configured (Not Scored)
+    file:
+        path: '/var/log/news'
+        state: directory
+        owner: root
+        group: root    
   - command: find /etc/rsyslog.d -type f
     register: rsyslog_files
     changed_when: False
