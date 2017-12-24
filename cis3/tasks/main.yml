@@ -1,7 +1,5 @@
 ---
 
-#  - include: check_requirements.yml
-
   - include: section_01.yml
     tags: section01
 
