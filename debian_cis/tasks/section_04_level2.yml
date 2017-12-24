@@ -55,9 +55,10 @@
       - lvl.1.workstation
       - not.scored
 
-  - name: 4.2.1.2 Ensure logging is configured (Not Scored)
+  - name: 4.2.1.2 Ensure logging files are configured (Not Scored)
     file:
         path: 'var/log/{{ item }}'
+        state: touch
         owner: root
         group: root
         mode: 0600
