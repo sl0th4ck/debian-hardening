@@ -61,6 +61,7 @@
         state: directory
         owner: root
         group: root
+    tags:
       - section4
       - section4.2
       - section4.2.1.2a
