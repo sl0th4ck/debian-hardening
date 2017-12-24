@@ -73,8 +73,8 @@
       - lvl.1.workstation
 
      
-
-  - command: grep INACTIVE /etc/default/useradd
+  - name: 5.4.1.4 Grep for INACTIVE in /etc/default/useradd    
+    command: grep INACTIVE /etc/default/useradd
     changed_when: False
     failed_when: False
     check_mode: no
@@ -85,8 +85,8 @@
       - section5.4.1.4
       - lvl.1.server
       - lvl.1.workstation
-
-  - command: useradd -D -f 35
+  - name: 5.4.1.4 run useradd -D -f 35 if /etc/defaults/useradd does not exist.
+    command: useradd -D -f 35
     when: lock_inactive_rc.rc == 0
     tags:
       - section5
