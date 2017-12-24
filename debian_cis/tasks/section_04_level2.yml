@@ -88,6 +88,8 @@
       - 'warn'
       - 'messages'
       - 'localmessages'
+      - 'lpr.log'
+      - 'mail.log'
     when: syslog_package == "rsyslog"
     tags:
       - section4
