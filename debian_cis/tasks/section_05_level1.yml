@@ -13,6 +13,20 @@
       - lvl.1.workstation
       - lvl.1.server
       - lvl.1.workstation
+
+  - name: 5.1.1 Ensure anacron daemon is enabled (Scored)
+    service:
+      name: anacron
+      state: started
+      enabled: yes
+    tags:
+      - section5
+      - section5.1
+      - section5.1.1
+      - lvl.1.server
+      - lvl.1.workstation
+      - lvl.1.server
+      - lvl.1.workstation
             
   - name: 5.1.2 Ensure permissions on /etc/crontab are configured (Scored)
     file:
