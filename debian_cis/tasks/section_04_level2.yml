@@ -64,7 +64,7 @@
     tags:
       - section4
       - section4.2
-      - section4.2.1.2a
+      - section4.2.1.2
       - lvl.1.server
       - lvl.1.workstation
       - not.scored
@@ -93,7 +93,6 @@
       - section4
       - section4.2
       - section4.2.1.2
-      - section4.2.1.2a
       - lvl.1.server
       - lvl.1.workstation
       - not.scored
