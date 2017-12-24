@@ -7,6 +7,7 @@
     with_items:
       - iptables
       - iptables-persistent
+      - netfilter-persistent
     when: activate_iptables == True
     tags:
       - section3
