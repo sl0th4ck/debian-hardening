@@ -2,5 +2,5 @@
 
 - hosts: 10.40.1.10
   roles:
-    - cis3
+    - debian_cis
   become: true
