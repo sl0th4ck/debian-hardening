@@ -17,7 +17,7 @@
     register: boot_password
     failed_when: false
     ignore_errors: yes 
-    changed_when: False
+    changed_when: false
     tags:
       - section1
       - section1.4
