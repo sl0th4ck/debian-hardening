@@ -72,13 +72,7 @@
       - lvl.1.server
       - lvl.1.workstation
 
-  - command: useradd -D -f 35
-    tags:
-      - section5
-      - section5.4
-      - section5.4.1.4
-      - lvl.1.server
-      - lvl.1.workstation      
+     
 
   - command: grep INACTIVE /etc/default/useradd
     changed_when: False
@@ -91,6 +85,15 @@
       - section5.4.1.4
       - lvl.1.server
       - lvl.1.workstation
+
+  - command: useradd -D -f 35
+    when: lock_inactive_rc.rc == 0
+    tags:
+      - section5
+      - section5.4
+      - section5.4.1.4
+      - lvl.1.server
+      - lvl.1.workstation 
       
   - name: 5.4.1.4 Ensure inactive password lock is 30 days or less (Scored)
     lineinfile:
