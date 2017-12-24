@@ -116,7 +116,7 @@
     with_items:
       - { regexp: '^[org/gnome/login-screen]' }
       - { regexp: '^banner-message-enable=true' }
-      - { regexp: '^banner-message-text="Authorized uses only. All activity may be monitored and reported."^\' }
+      - { regexp: '^banner-message-text="Authorized users only. All activity may be monitored and reported."^\' }
     when: gdm_rule.stat.exists == True 
     tags:
       - section1
