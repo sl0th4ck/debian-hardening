@@ -72,7 +72,7 @@
       - lvl.1.server
       - lvl.1.workstation
       
-  - name: 3.2.4 Ensure suspicious packets are logged (Scored)
+  - name: 3.2.4 Ensure suspicious packets are logged for all(Scored)
     sysctl:
       name: net.ipv4.conf.all.log_martians
       value: 1
@@ -83,7 +83,19 @@
       - section3.2.4
       - lvl.1.server
       - lvl.1.workstation
-      
+
+  - name: 3.2.4 Ensure suspicious packets are logged for default(Scored)
+    sysctl:
+      name: net.ipv4.conf.default.log_martians
+      value: 1
+      state: present
+    tags:
+      - section3
+      - section3.2
+      - section3.2.4
+      - lvl.1.server
+      - lvl.1.workstation
+
   - name: 3.2.5 Ensure broadcast ICMP requests are ignored (Scored)
     sysctl:
       name: net.ipv4.icmp_echo_ignore_broadcasts
