@@ -1,6 +1,6 @@
 ---
 
-- hosts: maven
+- hosts: gcp
   roles:
     - debian_cis
   become: true
