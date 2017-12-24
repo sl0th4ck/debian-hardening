@@ -165,10 +165,10 @@
       - lvl.1.server
       - lvl.1.workstation
       
-  - name: 5.4.4 Ensure default user umask is 027 or more restrictive (Scored)
+  - name: 5.4.4 Ensure default user umask is 077 (debian) or more restrictive (Scored)
     lineinfile:
       dest: "{{ item }}"
-      line: 'umask 027'
+      line: 'umask 077'
       regexp: '^umask'
       state: present
     with_items:
