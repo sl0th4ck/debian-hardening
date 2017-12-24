@@ -88,7 +88,7 @@
 
   - name: 5.4.1.4 run useradd -D -f 35 if /etc/defaults/useradd does not exist.
     command: useradd -D -f 35
-    when: lock_inactive_rc.rc == 1
+    when: lock_inactive_rc.rc == 2
     tags:
       - section5
       - section5.4
