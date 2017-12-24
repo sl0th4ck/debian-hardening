@@ -57,7 +57,7 @@
 
   - name: 4.2.1.2 Ensure logging files are configured (Not Scored)
     file:
-        path: 'var/log/{{ item }}'
+        path: '/var/log/{{ item }}'
         state: touch
         owner: root
         group: root
@@ -78,6 +78,7 @@
       - section4
       - section4.2
       - section4.2.1.2
+      - section4.2.1.2a
       - lvl.1.server
       - lvl.1.workstation
       - not.scored
