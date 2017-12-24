@@ -35,6 +35,18 @@
       - section3.2.2
       - lvl.1.server
       - lvl.1.workstation
+
+  - name: 3.2.2 Disable ICMP send packet redirects (Scored)
+    sysctl:
+      name: net.ipv4.conf.default.accept_redirects
+      value: 0
+      state: present
+    tags:
+      - section3
+      - section3.2
+      - section3.2.2
+      - lvl.1.server
+      - lvl.1.workstation
       
   - name: 3.2.3 Ensure secure ICMP redirects are not accepted (Scored)
     sysctl:
