@@ -1,8 +1,20 @@
 ---
 
-  - name: 3.2.1 Ensure source routed packets are not accepted (Scored)
+  - name: 3.2.1 Ensure source routed packets are not accepted all(Scored)
     sysctl:
       name: net.ipv4.conf.all.accept_source_route
+      value: 0
+      state: present
+    tags:
+      - section3
+      - section3.2
+      - section3.2.1
+      - lvl.1.server
+      - lvl.1.workstation
+
+  - name: 3.2.1 Ensure source routed packets are not accepted default(Scored)
+    sysctl:
+      name: net.ipv4.conf.default.accept_source_route
       value: 0
       state: present
     tags:
